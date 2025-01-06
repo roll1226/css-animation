@@ -1,0 +1,40 @@
+.example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animation__1 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #f00;
+  animation: animation__1 2s infinite alternate;
+}
+
+@keyframes animation__1 {
+  0% {
+    background: #f00;
+  }
+  100% {
+    background: #0f0;
+  }
+}
+
+.animation__2 {
+  width: 100px;
+  height: 100px;
+  background: #f00;
+  animation: animation__2 2s infinite alternate;
+}
+
+@keyframes animation__2 {
+  0% {
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+  }
+}

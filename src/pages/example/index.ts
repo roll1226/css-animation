@@ -1,5 +1,8 @@
+import "./style.scss";
+
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <h1>Example</h1>
+  <div class="example">
+    <div class="animation__1"></div>
+    <div class="animation__2"></div>
   </div>
 `;
