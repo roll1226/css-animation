@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 50px;
 }
 
 .animation__1 {
@@ -26,15 +27,15 @@
   height: 100px;
   background: #f00;
   animation: animation__2 2s infinite alternate;
+  transform: scale(1, 1);
+  transform-origin: top left;
 }
 
 @keyframes animation__2 {
   0% {
-    width: 100px;
-    height: 100px;
+    transform: scale(1, 1);
   }
   100% {
-    width: 200px;
-    height: 200px;
+    transform: scale(2, 2);
   }
 }
