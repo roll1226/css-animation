@@ -14,52 +14,78 @@
   letter-spacing: 0;
   line-height: 1;
   font-weight: bold;
-  transform: translateY(0);
 
-  opacity: 0;
-  // cubic-bezier(0.42, 1, 0.76, 0.98)
+  &:nth-child(1),
+  &:nth-child(2) {
+    transform: translateY(0%);
+  }
+
   &:nth-child(1) {
-    color: #f00;
-    opacity: 1;
-    clip-path: inset(0 0 0 50%);
-    animation: moveTop 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    animation: outDown 0.2s ease-in 0.2s forwards;
   }
   &:nth-child(2) {
-    color: #0f0;
-    opacity: 1;
-    clip-path: inset(0 50% 0 0);
-    animation: moveDown 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    animation: outTop 0.2s ease-in 0.2s forwards;
   }
 
   &:nth-child(3) {
-    color: #00f;
-    // opacity: 1;
-    clip-path: inset(0 0 0 50%);
-    animation: moveTop 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+    transform: translateY(-100%);
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    animation: insDown 0.2s ease-out 0.2s forwards,
+      outDown 0.2s ease-in 0.6s forwards;
   }
   &:nth-child(4) {
-    color: #ff0;
-    // opacity: 1;
-    clip-path: inset(0 50% 0 0);
-    animation: moveDown 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+    transform: translateY(100%);
+    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    animation: insTop 0.2s ease-out 0.2s forwards,
+      outTop 0.2s ease-in 0.6s forwards;
   }
 
   &:nth-child(5) {
-    color: #f0f;
-    // opacity: 1;
-    clip-path: inset(0 0 0 50%);
-    animation: moveTop 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+    transform: translateY(100%);
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    animation: insDown 0.2s ease-out 0.6s forwards,
+      outDown 0.2s ease-in 1s forwards;
   }
   &:nth-child(6) {
-    color: #0ff;
-    // opacity: 1;
-    clip-path: inset(0 50% 0 0);
-    animation: moveDown 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+    transform: translateY(-100%);
+    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    animation: insTop 0.2s ease-out 0.6s forwards,
+      outTop 0.2s ease-in 1s forwards;
+  }
+  &:nth-child(7) {
+    transform: translateY(-100%);
+    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    mask-image: linear-gradient(to left, black 50%, transparent 50%);
+    animation: insTop 0.2s ease-out 1s forwards,
+      outTop 0.2s ease-in 1.4s forwards;
+  }
+  &:nth-child(8) {
+    transform: translateY(100%);
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    mask-image: linear-gradient(to right, black 50%, transparent 50%);
+    animation: insDown 0.2s ease-out 1s forwards,
+      outDown 0.2s ease-in 1.4s forwards;
   }
 }
 
-// 上にスライドアニメーション
-@keyframes moveTop {
+@keyframes insTop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes outTop {
   0% {
     transform: translateY(0);
   }
@@ -68,7 +94,16 @@
   }
 }
 
-@keyframes moveDown {
+@keyframes insDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes outDown {
   0% {
     transform: translateY(0);
   }
