@@ -1,1 +1,78 @@
-// SVGを使ったアニメーション
+.animation3 {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  border: solid 0.5rem #000;
+  overflow: hidden;
+}
+
+.animation3 > div {
+  top: 0;
+  left: 0;
+  position: absolute;
+  font-size: 10rem;
+  letter-spacing: 0;
+  line-height: 1;
+  font-weight: bold;
+  transform: translateY(0);
+
+  opacity: 0;
+  // cubic-bezier(0.42, 1, 0.76, 0.98)
+  &:nth-child(1) {
+    color: #f00;
+    opacity: 1;
+    clip-path: inset(0 0 0 50%);
+    animation: moveTop 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+  }
+  &:nth-child(2) {
+    color: #0f0;
+    opacity: 1;
+    clip-path: inset(0 50% 0 0);
+    animation: moveDown 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+  }
+
+  &:nth-child(3) {
+    color: #00f;
+    // opacity: 1;
+    clip-path: inset(0 0 0 50%);
+    animation: moveTop 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+  }
+  &:nth-child(4) {
+    color: #ff0;
+    // opacity: 1;
+    clip-path: inset(0 50% 0 0);
+    animation: moveDown 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+  }
+
+  &:nth-child(5) {
+    color: #f0f;
+    // opacity: 1;
+    clip-path: inset(0 0 0 50%);
+    animation: moveTop 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+  }
+  &:nth-child(6) {
+    color: #0ff;
+    // opacity: 1;
+    clip-path: inset(0 50% 0 0);
+    animation: moveDown 0.4s cubic-bezier(0.42, 0, 0.76, 0.02) forwards;
+  }
+}
+
+// 上にスライドアニメーション
+@keyframes moveTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
