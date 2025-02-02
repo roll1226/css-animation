@@ -1,82 +1,143 @@
+@mixin leftText($inDelay, $outDelay) {
+  transform: translateY(-100%);
+  -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+  mask-image: linear-gradient(to right, black 50%, transparent 50%);
+  animation: inDown 0.2s ease-out $inDelay forwards,
+    outDown 0.2s ease-in $outDelay forwards;
+}
+
+@mixin rightText($inDelay, $outDelay) {
+  transform: translateY(100%);
+  -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
+  mask-image: linear-gradient(to left, black 50%, transparent 50%);
+  animation: inTop 0.2s ease-out $inDelay forwards,
+    outTop 0.2s ease-in $outDelay forwards;
+}
+
 .animation3 {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  border: solid 0.5rem #000;
-  overflow: hidden;
+  .text__wrap {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border: solid 0.5rem #aaa;
+    background: #242424;
+    overflow: hidden;
+    z-index: 1;
+
+    & > .text {
+      top: 0;
+      left: 0;
+      position: absolute;
+      font-size: 10rem;
+      letter-spacing: 0;
+      line-height: 1;
+      font-weight: bold;
+
+      &:nth-child(1) {
+        @include leftText(0.2s, 0.6s);
+      }
+      &:nth-child(2) {
+        @include rightText(0.2s, 0.6s);
+      }
+
+      &:nth-child(3) {
+        @include leftText(0.7s, 1.1s);
+      }
+      &:nth-child(4) {
+        @include rightText(0.7s, 1.1s);
+      }
+
+      &:nth-child(5) {
+        @include leftText(1.2s, 1.6s);
+      }
+      &:nth-child(6) {
+        @include rightText(1.2s, 1.6s);
+      }
+      &:nth-child(7) {
+        @include leftText(1.7s, 2.1s);
+      }
+      &:nth-child(8) {
+        @include rightText(1.7s, 2.1s);
+      }
+    }
+  }
+
+  & > .background {
+    width: 200vw;
+    height: 100vh;
+    position: absolute;
+
+    &:nth-child(3) {
+      background: #222;
+      top: -50%;
+      left: -50%;
+      transform-origin: center bottom;
+      rotate: 0deg;
+
+      animation: rotate1 0.2s ease-in-out 0.2s forwards,
+        rotate2 0.2s ease-in-out 0.6s forwards,
+        rotate3 0.2s ease-in-out 1.1s forwards,
+        rotate4 0.2s ease-in-out 1.6s forwards,
+        rotate5 0.2s ease-in-out 2.1s forwards;
+    }
+
+    &:nth-child(2) {
+      background: #444;
+      top: 50%;
+      left: -50%;
+      transform-origin: center top;
+
+      animation: rotate1 0.2s ease-in-out 0.2s forwards,
+        rotate2 0.2s ease-in-out 0.6s forwards,
+        rotate3 0.2s ease-in-out 1.1s forwards,
+        rotate4 0.2s ease-in-out 1.6s forwards,
+        rotate5 0.2s ease-in-out 2.1s forwards;
+    }
+  }
 }
 
-.animation3 > div {
-  top: 0;
-  left: 0;
-  position: absolute;
-  font-size: 10rem;
-  letter-spacing: 0;
-  line-height: 1;
-  font-weight: bold;
-
-  &:nth-child(1),
-  &:nth-child(2) {
-    transform: translateY(0%);
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg);
   }
-
-  &:nth-child(1) {
-    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    animation: outDown 0.2s ease-in 0.2s forwards;
+  100% {
+    transform: rotate(-180deg);
   }
-  &:nth-child(2) {
-    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    animation: outTop 0.2s ease-in 0.2s forwards;
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotate(-180deg);
   }
-
-  &:nth-child(3) {
-    transform: translateY(-100%);
-    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    animation: insDown 0.2s ease-out 0.2s forwards,
-      outDown 0.2s ease-in 0.6s forwards;
+  100% {
+    transform: rotate(-360deg);
   }
-  &:nth-child(4) {
-    transform: translateY(100%);
-    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    animation: insTop 0.2s ease-out 0.2s forwards,
-      outTop 0.2s ease-in 0.6s forwards;
+}
+@keyframes rotate3 {
+  0% {
+    transform: rotate(-360deg);
   }
-
-  &:nth-child(5) {
-    transform: translateY(100%);
-    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    animation: insDown 0.2s ease-out 0.6s forwards,
-      outDown 0.2s ease-in 1s forwards;
+  100% {
+    transform: rotate(-540deg);
   }
-  &:nth-child(6) {
-    transform: translateY(-100%);
-    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    animation: insTop 0.2s ease-out 0.6s forwards,
-      outTop 0.2s ease-in 1s forwards;
+}
+@keyframes rotate4 {
+  0% {
+    transform: rotate(-540deg);
   }
-  &:nth-child(7) {
-    transform: translateY(-100%);
-    -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    mask-image: linear-gradient(to left, black 50%, transparent 50%);
-    animation: insTop 0.2s ease-out 1s forwards,
-      outTop 0.2s ease-in 1.4s forwards;
+  100% {
+    transform: rotate(-720deg);
   }
-  &:nth-child(8) {
-    transform: translateY(100%);
-    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    mask-image: linear-gradient(to right, black 50%, transparent 50%);
-    animation: insDown 0.2s ease-out 1s forwards,
-      outDown 0.2s ease-in 1.4s forwards;
+}
+@keyframes rotate5 {
+  0% {
+    transform: rotate(-720deg);
+  }
+  100% {
+    transform: rotate(-900deg);
   }
 }
 
-@keyframes insTop {
+@keyframes inTop {
   0% {
     transform: translateY(100%);
   }
@@ -94,7 +155,7 @@
   }
 }
 
-@keyframes insDown {
+@keyframes inDown {
   0% {
     transform: translateY(-100%);
   }
