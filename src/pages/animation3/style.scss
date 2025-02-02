@@ -2,16 +2,16 @@
   transform: translateY(-100%);
   -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
   mask-image: linear-gradient(to right, black 50%, transparent 50%);
-  animation: inDown 0.2s ease-out $inDelay forwards,
-    outDown 0.2s ease-in $outDelay forwards;
+  animation: inTop 0.2s ease-out $inDelay forwards,
+    outTop 0.2s ease-in $outDelay forwards;
 }
 
 @mixin rightText($inDelay, $outDelay) {
   transform: translateY(100%);
   -webkit-mask-image: linear-gradient(to left, black 50%, transparent 50%);
   mask-image: linear-gradient(to left, black 50%, transparent 50%);
-  animation: inTop 0.2s ease-out $inDelay forwards,
-    outTop 0.2s ease-in $outDelay forwards;
+  animation: inDown 0.2s ease-out $inDelay forwards,
+    outDown 0.2s ease-in $outDelay forwards;
 }
 
 .animation3 {
@@ -101,39 +101,39 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-180deg);
+    transform: rotate(180deg);
   }
 }
 @keyframes rotate2 {
   0% {
-    transform: rotate(-180deg);
+    transform: rotate(180deg);
   }
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes rotate3 {
   0% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
   100% {
-    transform: rotate(-540deg);
+    transform: rotate(540deg);
   }
 }
 @keyframes rotate4 {
   0% {
-    transform: rotate(-540deg);
+    transform: rotate(540deg);
   }
   100% {
-    transform: rotate(-720deg);
+    transform: rotate(720deg);
   }
 }
 @keyframes rotate5 {
   0% {
-    transform: rotate(-720deg);
+    transform: rotate(720deg);
   }
   100% {
-    transform: rotate(-900deg);
+    transform: rotate(900deg);
   }
 }
 
