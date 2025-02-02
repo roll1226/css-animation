@@ -48,7 +48,7 @@ $end_animation: cubic-bezier(0.8, 0, 0.92, 0.19);
     z-index: 2;
     right: 0;
     background: #f28396;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     animation: animation__2 2s forwards;
     animation-timing-function: $start_animation;
     clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
@@ -68,7 +68,7 @@ $end_animation: cubic-bezier(0.8, 0, 0.92, 0.19);
     z-index: 4;
     left: 0;
     background: linear-gradient(45deg, #f58c8f, #be6c6d);
-    transform: translateY(100%);
+    transform: translateX(-100%);
     animation: animation__4 2s forwards;
     animation-timing-function: $start_animation;
     clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
@@ -95,18 +95,18 @@ $end_animation: cubic-bezier(0.8, 0, 0.92, 0.19);
 
 @keyframes animation__2 {
   0% {
-    transform: translateY(-100%);
+    transform: translateX(100%);
   }
   50% {
-    transform: translateY(0%);
+    transform: translateX(0%);
     animation-timing-function: $end_animation;
   }
   65% {
-    transform: translateY(-100%);
+    transform: translateX(100%);
     animation-timing-function: $end_animation;
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateX(100%);
     animation-timing-function: $end_animation;
   }
 }
@@ -131,18 +131,18 @@ $end_animation: cubic-bezier(0.8, 0, 0.92, 0.19);
 
 @keyframes animation__4 {
   0% {
-    transform: translateY(100%);
+    transform: translateX(-100%);
   }
   50% {
-    transform: translateY(0%);
+    transform: translateX(0%);
     animation-timing-function: $end_animation;
   }
   65% {
-    transform: translateY(100%);
+    transform: translateX(-100%);
     animation-timing-function: $end_animation;
   }
   100% {
-    transform: translateY(100%);
+    transform: translateX(-100%);
     animation-timing-function: $end_animation;
   }
 }

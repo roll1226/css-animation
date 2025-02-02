@@ -10,8 +10,8 @@ export const PATH = {
 export const PATHS = {
   [PATH.HOME]: () => import("./pages/home"),
   [PATH.ANIMATION1]: () => import("./pages/animation1"),
-  [PATH.ANIMATION2]: () => import("./pages/animation2"),
-  [PATH.ANIMATION3]: () => import("./pages/animation3"),
+  [PATH.ANIMATION2]: () => import("./pages/animation3"),
+  [PATH.ANIMATION3]: () => import("./pages/animation2"),
   [PATH.EXAMPLE]: () => import("./pages/example"),
   [PATH.NOT_FOUND]: () => import("./pages/notFound"),
 };
