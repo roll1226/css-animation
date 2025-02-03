@@ -2,8 +2,8 @@ import "./style.scss";
 
 // クエリストリング取得
 const url = new URL(window.location.href);
-const params = url.searchParams;
-const shouldShowBackground = params.get("background") === "true" || false;
+const shouldShowBackground =
+  url.searchParams.get("background") === "true" || false;
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="animation3">
